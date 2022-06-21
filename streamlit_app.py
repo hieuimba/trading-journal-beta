@@ -10,6 +10,7 @@ from datetime import datetime, timedelta
 from ta import volatility
 
 st.set_page_config(layout='wide')
+st.write('<style>div.row-widget.stRadio > div{flex-direction:row;}</style>', unsafe_allow_html=True)
 
 trades_url = 'https://hhogib1lv4.execute-api.ca-central-1.amazonaws.com/prod/trades'
 orders_url = 'https://hhogib1lv4.execute-api.ca-central-1.amazonaws.com/prod/orders'
@@ -88,7 +89,7 @@ with two:
 
 with one:
     watchlist_view = st.radio(label='Choose View', options=[
-                              'Active', 'All'], horizontal=True)
+                              'Active', 'All'])
     watchlist['Added'] = pd.to_datetime(watchlist['Added'])
     watchlist['Added'] = watchlist['Added'].apply(
         lambda x: x.strftime('%Y-%m-%d %H:%M:%S'))
