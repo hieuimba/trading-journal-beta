@@ -1,0 +1,6 @@
+alpaca-trade-api
+requests
+pandas
+streamlit
+pytz
+ta
