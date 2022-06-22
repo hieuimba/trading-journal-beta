@@ -66,7 +66,7 @@ watchlist = pd.DataFrame(watchlist_data)
 
 # render
 st.dataframe(trades)
-st.write(f"P&L: {round(trades['PnL'].sum(),5)}")
+st.write(f"P&L: {round(trades['PnL'].sum(),5)} {round(trades['Commission'].sum(),5)}")
 watchlist = watchlist[['Symbol', 'Direction',
                        'Entry', 'Stop', 'Target', 'Added', 'State']]
 
