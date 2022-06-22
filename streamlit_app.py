@@ -37,7 +37,7 @@ watchlist_data = get_watchlist_table(watchlist_url)
 trades = pd.DataFrame(trades_data)
 trades = trades[trades['Tag'] != 'Error']
 trades = trades[['Symbol', 'OpenDate', 'CloseDate', 'Direction', 'Quantity', 'InitEntry',
-                 'Stop', 'Target', 'AvgEntry', 'AvgExit', 'PnL', 'Status', 'Updated', 'TradeID', 'Executions']]
+                 'Stop', 'Target', 'AvgEntry', 'AvgExit', 'PnL','Commission', 'Status', 'Updated', 'TradeID', 'Executions']]
 
 trades['OpenDate'] = pd.to_datetime(trades['OpenDate'])
 trades['OpenDate'] = trades['OpenDate'].apply(
