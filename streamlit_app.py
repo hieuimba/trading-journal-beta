@@ -68,7 +68,7 @@ watchlist = pd.DataFrame(watchlist_data)
 st.dataframe(trades)
 st.write(f"P&L: {round(trades['PnL'].sum(),5)}, Com: {round(trades['Commission'].sum(),5)}")
 watchlist = watchlist[['Symbol', 'Direction',
-                       'Entry', 'Stop', 'Target', 'Added', 'State']]
+                       'Entry', 'Stop', 'Target','Quantity', 'Added', 'State']]
 
 one, two = st.columns([1, 1])
 with two:
@@ -163,6 +163,7 @@ if watchlist_send:
         "Entry": f"{entry}",
         "Stop": f"{stop}",
         "Target": f"{target}",
+        "Quantity": f"{size}",
         "Added": f"{updated}",
         "State": "Active"
     }
