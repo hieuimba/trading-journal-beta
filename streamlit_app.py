@@ -163,7 +163,6 @@ if watchlist_send:
         "Entry": f"{entry}",
         "Stop": f"{stop}",
         "Target": f"{target}",
-        "Quantity": f"{size}",
         "Added": f"{updated}",
         "State": "Active"
     }
