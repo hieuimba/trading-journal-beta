@@ -164,6 +164,7 @@ if watchlist_send:
         "Stop": f"{stop}",
         "Target": f"{target}",
         "Added": f"{updated}",
+        "Quantity":f"{size}",
         "State": "Active"
     }
     requests.post(watchlist_url, json=request_body)
