@@ -33,7 +33,6 @@ def get_watchlist_table(url):
 # set up
 trades_data = get_trades_table(trades_url)
 watchlist_data = get_watchlist_table(watchlist_url)
-st.write(watchlist_data)
 
 trades = pd.DataFrame(trades_data)
 trades = trades[trades['Tag'] != 'Error']
