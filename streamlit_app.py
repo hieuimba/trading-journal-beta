@@ -97,6 +97,7 @@ with one:
         watchlist = watchlist[watchlist['State'] == 'Active']
     else:
         watchlist = watchlist
+    watchlist = watchlist.sort_values(by='Updated',ascending=False)
     st.dataframe(watchlist)
 
 # sidebar
