@@ -51,7 +51,7 @@ trades['Updated'] = pd.to_datetime(trades['Updated'])
 trades['Updated'] = trades['Updated'].apply(
     lambda x: x.strftime('%Y-%m-%d %H:%M:%S'))
 
-trades = trades.sort_values(by=['OpenDate'], ascending=True)
+trades = trades.sort_values(by=['Updated'], ascending=True)
 trades = trades[trades['OpenDate'] > '2022-03-20']
 
 symbol = st.selectbox(
@@ -97,7 +97,6 @@ with one:
         watchlist = watchlist[watchlist['State'] == 'Active']
     else:
         watchlist = watchlist
-    watchlist = watchlist.sort_values(by='Updated',ascending=False)
     st.dataframe(watchlist)
 
 # sidebar
