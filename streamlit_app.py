@@ -51,7 +51,7 @@ trades['Updated'] = pd.to_datetime(trades['Updated'])
 trades['Updated'] = trades['Updated'].apply(
     lambda x: x.strftime('%Y-%m-%d %H:%M:%S'))
 
-trades = trades.sort_values(by=['Updated'], ascending=True)
+trades = trades.sort_values(by=['Updated'], ascending=False)
 trades = trades[trades['OpenDate'] > '2022-03-20']
 
 symbol = st.selectbox(
