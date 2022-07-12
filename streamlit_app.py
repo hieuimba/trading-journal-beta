@@ -170,7 +170,10 @@ if watchlist_send:
     requests.post(watchlist_url, json=request_body)
     st.experimental_rerun()
 
+trades_sorted = trades.sort_values(by=['OpenDate'], ascending=False)
+trades_sorted = trades_sorted['OpenDate','PnL']
 
+st.line_chart(trades_sorted)
 # send_update_request = st.button('Send Update Request')
 # if send_update_request:
 
