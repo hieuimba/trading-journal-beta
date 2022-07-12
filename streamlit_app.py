@@ -170,7 +170,7 @@ if watchlist_send:
     requests.post(watchlist_url, json=request_body)
     st.experimental_rerun()
 
-trades_sorted = trades.sort_values(by=['OpenDate'], ascending=True)
+trades_sorted = trades.sort_values(by=['CloseDate'], ascending=True)
 trades_sorted = trades_sorted[['OpenDate','PnL']]
 plot = trades_sorted['PnL'].cumsum()
 plot = plot.reset_index(drop=True)
