@@ -169,13 +169,14 @@ if watchlist_send:
     }
     requests.post(watchlist_url, json=request_body)
     st.experimental_rerun()
-
+    
 trades_sorted = trades.sort_values(by=['CloseDate'], ascending=True)
-trades_sorted = trades_sorted[['OpenDate','PnL']]
-plot = trades_sorted['PnL'].cumsum()
-plot = plot.reset_index(drop=True)
+trades_sorted['CumPnL'] = trades_sorted['PnL'].cumsum()
+trades_sorted = trades_sorted[['CloseDate','CumPnL']]
+plot = trades_sorted.set_index('CloseDate')
 
 st.line_chart(plot)
+
 # send_update_request = st.button('Send Update Request')
 # if send_update_request:
 
