@@ -171,7 +171,7 @@ if watchlist_send:
     st.experimental_rerun()
 
 trades_sorted = trades.sort_values(by=['OpenDate'], ascending=False)
-trades_sorted = trades_sorted['PnL']
+trades_sorted = trades_sorted[['OpenDate','PnL']]
 trades_sorted['CumPnL'] = trades_sorted.cumsum()
 st.dataframe(trades_sorted)
 st.line_chart(trades_sorted)
