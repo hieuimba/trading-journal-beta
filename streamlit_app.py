@@ -172,8 +172,8 @@ if watchlist_send:
     
 trades_sorted = trades.sort_values(by=['CloseDate'], ascending=True)
 trades_sorted['CumPnL'] = trades_sorted['PnL'].cumsum()
-trades_sorted = trades_sorted[['CloseDate','CumPnL']]
-plot = trades_sorted.set_index('CloseDate')
+trades_sorted = trades_sorted.reset_index(drop=True)
+plot = trades_sorted['CumPnL']
 
 st.line_chart(plot)
 
