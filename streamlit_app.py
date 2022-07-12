@@ -175,7 +175,6 @@ trades_sorted = trades_sorted[['OpenDate','PnL']]
 plot = trades_sorted['PnL'].cumsum()
 plot = plot.reset_index(drop=True)
 
-st.dataframe(trades_sorted)
 st.line_chart(plot)
 # send_update_request = st.button('Send Update Request')
 # if send_update_request:
