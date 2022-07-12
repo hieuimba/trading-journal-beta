@@ -172,9 +172,11 @@ if watchlist_send:
 
 trades_sorted = trades.sort_values(by=['OpenDate'], ascending=True)
 trades_sorted = trades_sorted[['OpenDate','PnL']]
-trades_sorted['CumPnL'] = trades_sorted['PnL'].cumsum()
+plot = trades_sorted['PnL'].cumsum()
+plot = plot.reset_index(drop=True)
+
 st.dataframe(trades_sorted)
-st.line_chart(trades_sorted['CumPnL'])
+st.line_chart(plot)
 # send_update_request = st.button('Send Update Request')
 # if send_update_request:
 
